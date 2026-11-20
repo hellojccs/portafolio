@@ -830,3 +830,23 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .cform-wrap { margin: 0 auto; text-align: center; }
 .cform-send.btn { align-self: center; }
 .cform-msg { text-align: center; padding-left: 0; }
+
+/* =========================================================
+   ENTRADA IGUAL EN TODAS LAS SECCIONES
+   Etiqueta "// Sección" arriba a la izquierda y el contenido
+   siempre 32px debajo, con el mismo espacio arriba y abajo.
+   ========================================================= */
+.section > .label, .section > .head-row { margin: 0 0 32px; }
+.section > .head-row .label { margin: 0; }
+.section > .label + *, .section > .head-row + * { margin-top: 0 !important; }
+
+/* Etiqueta "Pronto" junto a Tienda (menú de arriba y menú de celular) */
+.soon { display: inline-block; margin-left: 6px; padding: 0 7px; border-radius: 999px; vertical-align: 1px;
+  font-family: var(--mono); font-size: 9px; line-height: 16px; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--black); background: var(--lilac); }
+.soon::before { content: ""; display: inline-block; width: 5px; height: 5px; margin-right: 5px; border-radius: 50%;
+  background: var(--orange); vertical-align: 1px; animation: soon-blink 1.6s ease-in-out infinite; }
+@keyframes soon-blink { 50% { opacity: .25; } }
+.gm-label .soon { font-size: 11px; line-height: 20px; padding: 0 10px; vertical-align: 6px; letter-spacing: .04em; }
+@media (prefers-reduced-motion: reduce) { .soon::before { animation: none; } }
+.shop { border-radius: 28px; }   /* mismas esquinas que la foto de Sobre mí */
