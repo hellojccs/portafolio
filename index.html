@@ -30,14 +30,20 @@
        se ocultan tu nombre y el botón, y aparece el botón de WhatsApp.
   -->
   <header class="nav" data-nav>
+    <!-- Efecto spotlight: un haz de luz cae sobre la sección activa -->
+    <div class="beam" data-beam aria-hidden="true"><i></i></div>
+    <div class="floor" data-floor aria-hidden="true"></div>
+    <span class="rimlight" data-rimlight aria-hidden="true"></span>
     <a href="#inicio" class="nav-brand" aria-label="Juan Carlos Carranza, inicio">
       <img src="assets/img/personaje-mini.jpg" alt="" width="40" height="40">
       <span class="nav-name">Juan Carlos Carranza Design &amp; Strategy</span>
     </a>
-    <nav class="nav-links" aria-label="Menú principal">
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#tienda">Tienda</a>
+    <nav class="nav-links" aria-label="Menú principal" data-tabs>
+      <span class="hover-pill" data-hover aria-hidden="true"></span>
+      <span class="active-pill" data-active aria-hidden="true"></span>
+      <a class="tab" href="#sobre-mi">Sobre mí</a>
+      <a class="tab" href="#proyectos">Proyectos</a>
+      <a class="tab" href="#tienda">Tienda</a>
     </nav>
     <a href="#contacto" class="btn btn-sm nav-cta">Work with me <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     <a href="https://wa.me/525536771350" class="icon-btn nav-wa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><use href="#i-wa"/></svg></a>
@@ -260,5 +266,6 @@
     document.querySelectorAll('.about, .pillars li, .forms article, .card, .shop, .contact').forEach(el => { el.classList.add('reveal'); io.observe(el); });
   </script>
   <script src="glass-menu.js"></script>
+  <script src="spotlight.js"></script>
 </body>
 </html>
