@@ -655,3 +655,18 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
   .svc-tab:nth-child(-n+2) { border-bottom: 1px solid var(--line-l); }
 }
 @media (prefers-reduced-motion: reduce) { .services.is-tabs .service { animation: none; } }
+
+/* Trayectoria y Freelance en "Sobre mí" (listas con líneas, estilo CV) */
+.cv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(36px, 6vw, 96px); margin-top: clamp(56px, 7vw, 96px); }
+.cv-label { font-size: 12px; line-height: 20px; letter-spacing: .2em; text-transform: uppercase; color: var(--grey-l);
+  padding-bottom: 16px; border-bottom: 1px solid var(--black); }
+.cv-list { list-style: none; }
+.cv-list li { display: grid; gap: 2px; padding: 18px 0 20px; border-bottom: 1px solid var(--line-l); }
+.cv-year { font-size: 12px; line-height: 20px; color: var(--orange); }
+.cv-name { font-family: var(--sans); font-size: 20px; line-height: 28px; letter-spacing: var(--track); }   /* H2 */
+.cv-role { font-size: 10px; line-height: 20px; text-transform: uppercase; color: var(--grey-l); }
+.cv-list li:hover .cv-name { color: var(--orange); }
+.cv-name { transition: color .2s; }
+@media (max-width: 760px) {
+  .cv { grid-template-columns: 1fr; gap: 48px; }
+}
