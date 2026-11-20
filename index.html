@@ -3,99 +3,176 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JCCS — Brand &amp; Visual Designer</title>
+  <title>Juan Carlos Carranza — Brand &amp; Visual Designer</title>
   <meta name="description" content="Brand & Visual Designer enfocado en crear sistemas visuales y desarrollar nuevos conceptos de marca. Más de 10 años de experiencia.">
-  <meta property="og:title" content="JCCS — Brand & Visual Designer">
+  <meta property="og:title" content="Juan Carlos Carranza — Brand & Visual Designer">
   <meta property="og:description" content="Sistemas visuales y nuevos conceptos de marca.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%23FF4B1F'/%3E%3C/svg%3E">
+  <meta property="og:image" content="assets/img/personaje.jpg">
+  <link rel="icon" href="assets/img/personaje-mini.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ============ MENÚ SUPERIOR ============ -->
-  <header class="nav">
-    <a href="#inicio" class="logo" aria-label="Inicio">JCCS<span class="dot"></span></a>
-    <nav>
-      <a href="#pilares">Pilares</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#forma">Cómo trabajo</a>
-      <a href="#contacto" class="nav-cta">Hablemos</a>
+  <!-- =========================================================
+       DATOS PARA CAMBIAR
+       - WhatsApp: busca "52XXXXXXXXXX" y pon tu número con lada (ej. 5215512345678).
+       - Correo: busca "hola@tucorreo.com".
+       - LinkedIn y X: busca los enlaces "#" con esos nombres.
+       ========================================================= -->
+
+  <!-- ============ MENÚ EN PÍLDORA ============
+       Un menú flotante: la sección activa se ilumina en naranja
+       con un haz de luz encima. Para cambiar un nombre, edita el texto
+       dentro de <span>...</span>.
+  -->
+  <header class="pillnav" data-pillnav>
+    <div class="beam" data-beam aria-hidden="true"><i></i></div>
+    <div class="floor" data-floor aria-hidden="true"></div>
+    <nav class="bar" aria-label="Menú principal">
+      <span class="rimlight" data-rimlight aria-hidden="true"></span>
+      <a href="#inicio" class="me" aria-label="Juan Carlos Carranza, inicio">
+        <img src="assets/img/personaje-mini.jpg" alt="" width="40" height="40">
+      </a>
+      <div class="tabs" data-tabs>
+        <span class="hover-pill" data-hover aria-hidden="true"></span>
+        <span class="active-pill" data-active aria-hidden="true"></span>
+        <a class="tab" href="#inicio">
+          <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span>Inicio</span>
+        </a>
+        <a class="tab" href="#sobre-mi">
+          <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/></svg>
+          <span>Sobre mí</span>
+        </a>
+        <a class="tab" href="#proyectos">
+          <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg>
+          <span>Proyectos</span>
+        </a>
+        <a class="tab" href="#tienda">
+          <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span>Tienda</span>
+        </a>
+        <a class="tab" href="#contacto">
+          <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+          <span>Escríbeme</span>
+        </a>
+      </div>
     </nav>
   </header>
+
+  <!-- Botones flotantes -->
+  <ul class="float" aria-label="Redes">
+    <li><a href="https://wa.me/52XXXXXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><use href="#i-wa"/></svg></a></li>
+    <li><a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><use href="#i-in"/></svg></a></li>
+    <li><a href="#" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><use href="#i-x"/></svg></a></li>
+  </ul>
 
   <main>
 
     <!-- ============ PORTADA ============ -->
     <section id="inicio" class="hero">
-      <p class="eyebrow">Brand &amp; Visual Designer · Ciudad de México</p>
-      <h1>
-        Creo <em>sistemas visuales</em><br>
-        y nuevos conceptos<br>
-        de marca.
-      </h1>
-      <div class="hero-foot">
-        <p class="hero-lead">
-          Más de 10 años de experiencia dando forma a marcas que se entienden,
-          se recuerdan y funcionan en cada punto de contacto.
-        </p>
-        <a href="#proyectos" class="btn">Ver proyectos <span aria-hidden="true">↓</span></a>
+      <div class="avatar">
+        <img src="assets/img/personaje.jpg" alt="Personaje de Juan Carlos con gorra hello" width="800" height="800">
+      </div>
+      <h1>Brand &amp; Visual Designer</h1>
+      <p class="hero-text">
+        <strong>Brand and Visual Designer</strong> enfocado en crear sistemas visuales y
+        desarrollar nuevos conceptos de marca. Cada proyecto se adapta a lo que tu
+        marca necesita y puede tomar 4 formas:
+      </p>
+      <ul class="chips">
+        <li><a href="#formas">Brand Strategy</a></li>
+        <li><a href="#formas">Brand Design</a></li>
+        <li><a href="#formas">Launch Systems</a></li>
+        <li><a href="#formas">Studio on Call</a></li>
+      </ul>
+    </section>
+
+    <!-- ============ SOBRE MÍ ============ -->
+    <section id="sobre-mi" class="section">
+      <p class="label">// Sobre mí</p>
+      <div class="about">
+        <h2>Más de <span class="hl">10 años</span> creando marcas que se entienden y se recuerdan.</h2>
+        <div class="about-text">
+          <p>
+            Según el objetivo de cada proyecto, sumo especialistas independientes
+            de acuerdo con lo que tu marca necesita, y <strong>tú hablas directamente conmigo.</strong>
+          </p>
+          <p>
+            Actualmente colaboro en la comunicación de imagen social del
+            <strong>Metro de la Ciudad de México.</strong>
+          </p>
+          <ul class="facts">
+            <li><b>10+</b><span>años de experiencia</span></li>
+            <li><b>4</b><span>pilares de trabajo</span></li>
+            <li><b>1</b><span>punto de contacto</span></li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- Cinta en movimiento con los pilares -->
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span>Branding</span><i>✦</i><span>Naming</span><i>✦</i><span>Diseño gráfico</span><i>✦</i><span>UX &amp; Motion</span><i>✦</i><span>Concepto</span><i>✦</i><span>Estrategia</span><i>✦</i><span>Social Media</span><i>✦</i>
-        <span>Branding</span><i>✦</i><span>Naming</span><i>✦</i><span>Diseño gráfico</span><i>✦</i><span>UX &amp; Motion</span><i>✦</i><span>Concepto</span><i>✦</i><span>Estrategia</span><i>✦</i><span>Social Media</span><i>✦</i>
-      </div>
-    </div>
-
     <!-- ============ PILARES ============ -->
     <section id="pilares" class="section">
-      <div class="section-head">
-        <p class="eyebrow">Pilares de trabajo</p>
-        <h2>Cada proyecto se construye <em>sobre cuatro pilares.</em></h2>
-      </div>
-
+      <p class="label">// Pilares de trabajo</p>
       <ol class="pillars">
-        <li class="pillar">
+        <li>
           <span class="num">01</span>
-          <h3>Branding <span class="slash">/</span> Naming</h3>
-          <p>Identidades completas: nombre, logotipo, tono y reglas para que la marca hable siempre con la misma voz.</p>
+          <h3>Branding / Naming</h3>
+          <p>Nombre, logotipo, tono y reglas para que la marca hable siempre con la misma voz.</p>
         </li>
-        <li class="pillar">
+        <li>
           <span class="num">02</span>
-          <h3>Diseño gráfico, UX <span class="amp">&amp;</span> Motion</h3>
-          <p>Piezas, interfaces y animación que llevan el sistema visual a pantallas, impresos y espacios reales.</p>
+          <h3>Diseño gráfico, UX &amp; Motion</h3>
+          <p>Piezas, interfaces y animación que llevan el sistema visual a pantallas, impresos y espacios.</p>
         </li>
-        <li class="pillar">
+        <li>
           <span class="num">03</span>
-          <h3>Concepto <span class="amp">&amp;</span> Estrategia</h3>
-          <p>La idea central detrás de la marca: qué la hace distinta, a quién le habla y cómo se posiciona.</p>
+          <h3>Concepto &amp; Estrategia</h3>
+          <p>La idea central de la marca: qué la hace distinta, a quién le habla y cómo se posiciona.</p>
         </li>
-        <li class="pillar">
+        <li>
           <span class="num">04</span>
           <h3>Social Media</h3>
-          <p>Lineamientos y contenido para redes que mantienen la marca viva, coherente y reconocible.</p>
+          <p>Lineamientos y contenido para redes que mantienen la marca viva y reconocible.</p>
         </li>
       </ol>
     </section>
 
+    <!-- ============ FORMAS DE TRABAJO ============ -->
+    <section id="formas" class="section">
+      <p class="label">// 4 formas de trabajar juntos</p>
+      <div class="forms">
+        <article>
+          <h3>Brand Strategy</h3>
+          <p>Definimos el concepto, el posicionamiento y la voz antes de diseñar.</p>
+        </article>
+        <article>
+          <h3>Brand Design</h3>
+          <p>Construimos la identidad visual completa y sus reglas de uso.</p>
+        </article>
+        <article>
+          <h3>Launch Systems</h3>
+          <p>Todo lo necesario para salir al mundo: piezas, redes y lanzamiento.</p>
+        </article>
+        <article>
+          <h3>Studio on Call</h3>
+          <p>Diseño continuo para tu marca, cuando lo necesites.</p>
+        </article>
+      </div>
+    </section>
+
     <!-- ============ PROYECTOS ============
-         Para cambiar una imagen: guarda tu foto en la carpeta assets/img/
-         y reemplaza el bloque <div class="ph"> ... </div> por:
+         Para poner una foto real: súbela a assets/img/ y cambia el bloque
+         <div class="ph">...</div> por:
          <img src="assets/img/nombre-de-tu-foto.jpg" alt="Descripción breve">
     -->
     <section id="proyectos" class="section">
-      <div class="section-head row">
-        <div>
-          <p class="eyebrow">Proyectos seleccionados</p>
-          <h2>Trabajo <em>reciente.</em></h2>
-        </div>
-        <p class="note">Imágenes de muestra: pronto aquí van los proyectos reales.</p>
+      <div class="head-row">
+        <p class="label">// Proyectos</p>
+        <p class="note">Imágenes de muestra · pronto los proyectos reales</p>
       </div>
 
       <div class="work">
@@ -107,98 +184,72 @@
             <span class="tag">Colaboración actual</span>
           </div>
         </article>
-
         <article class="card">
           <div class="media"><div class="ph ph-2"><span>Proyecto 02</span></div></div>
-          <div class="meta">
-            <h3>Nombre del proyecto</h3>
-            <p>Branding · Naming</p>
-          </div>
+          <div class="meta"><h3>Nombre del proyecto</h3><p>Branding · Naming</p></div>
         </article>
-
         <article class="card">
           <div class="media"><div class="ph ph-3"><span>Proyecto 03</span></div></div>
-          <div class="meta">
-            <h3>Nombre del proyecto</h3>
-            <p>Diseño gráfico · Motion</p>
-          </div>
+          <div class="meta"><h3>Nombre del proyecto</h3><p>Diseño gráfico · Motion</p></div>
         </article>
-
         <article class="card">
           <div class="media"><div class="ph ph-4"><span>Proyecto 04</span></div></div>
-          <div class="meta">
-            <h3>Nombre del proyecto</h3>
-            <p>Concepto · Estrategia</p>
-          </div>
+          <div class="meta"><h3>Nombre del proyecto</h3><p>Concepto · Estrategia</p></div>
         </article>
-
         <article class="card">
           <div class="media"><div class="ph ph-5"><span>Proyecto 05</span></div></div>
-          <div class="meta">
-            <h3>Nombre del proyecto</h3>
-            <p>Social Media</p>
-          </div>
+          <div class="meta"><h3>Nombre del proyecto</h3><p>Social Media</p></div>
         </article>
       </div>
     </section>
 
-    <!-- ============ CÓMO TRABAJO ============ -->
-    <section id="forma" class="section dark">
-      <div class="split">
+    <!-- ============ TIENDA ============ -->
+    <section id="tienda" class="section">
+      <div class="shop">
         <div>
-          <p class="eyebrow">Cómo trabajo</p>
-          <h2>Un equipo a la medida. <em>Una sola persona con quien hablar.</em></h2>
+          <p class="label">// Tienda</p>
+          <h2>Próximamente.</h2>
+          <p class="shop-text">Piezas, recursos y objetos de diseño. Escríbeme si quieres enterarte primero.</p>
         </div>
-        <div class="split-body">
-          <p>
-            Según el objetivo de cada proyecto, sumo especialistas independientes
-            de acuerdo con lo que tu marca necesita.
-          </p>
-          <p>
-            Tú hablas directamente conmigo: sin intermediarios, sin capas de
-            agencia, con decisiones rápidas y una visión clara de principio a fin.
-          </p>
-          <ul class="facts">
-            <li><strong>10+</strong><span>años de experiencia</span></li>
-            <li><strong>4</strong><span>pilares de trabajo</span></li>
-            <li><strong>1</strong><span>punto de contacto</span></li>
-          </ul>
-        </div>
+        <img src="assets/img/personaje.jpg" alt="" width="800" height="800" loading="lazy">
       </div>
     </section>
 
-    <!-- ============ CONTACTO ============
-         Cambia "hola@tucorreo.com" por tu correo real (aparece 2 veces abajo),
-         y los enlaces "#" por tus perfiles.
-    -->
+    <!-- ============ CONTACTO ============ -->
     <section id="contacto" class="section contact">
-      <p class="eyebrow">Contacto</p>
-      <h2 class="big">¿Tienes una marca<br>por <em>construir?</em></h2>
-      <a class="mail" href="mailto:hola@tucorreo.com">hola@tucorreo.com <span aria-hidden="true">→</span></a>
-      <ul class="social">
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Behance</a></li>
-        <li><a href="#">LinkedIn</a></li>
-      </ul>
+      <p class="label">// Contacto</p>
+      <h2 class="big">¿Tienes una marca por construir?</h2>
+      <div class="contact-actions">
+        <a href="https://wa.me/52XXXXXXXXXX" class="btn-wa big-btn" target="_blank" rel="noopener">
+          Escríbeme por WhatsApp
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
+        </a>
+        <a href="mailto:hola@tucorreo.com" class="mail">hola@tucorreo.com</a>
+      </div>
     </section>
 
   </main>
 
   <footer class="footer">
-    <span>© <span id="year">2026</span> JCCS</span>
-    <span>Brand &amp; Visual Designer</span>
+    <span>© <span id="year">2026</span> Juan Carlos Carranza</span>
+    <span>Design &amp; Strategy · Ciudad de México</span>
     <a href="#inicio">Volver arriba ↑</a>
   </footer>
 
-  <script>
-    // Año automático en el pie de página
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- Íconos -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.98L2 22l5.16-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.17 8.17 0 0 1-4.17-1.14l-.3-.18-3.06.89.9-2.98-.2-.31a8.2 8.2 0 1 1 6.83 3.72Zm4.5-6.13c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.12-.16.25-.63.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-3.32-2.9c-.25-.43.25-.4.71-1.33.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.74 2.74 0 0 0-.86 2.04c0 1.2.88 2.37 1 2.53.12.16 1.73 2.64 4.2 3.7 1.56.67 2.17.73 2.95.62.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3a1.97 1.97 0 1 0 0 3.94 1.97 1.97 0 0 0 0-3.94ZM20.44 13.4c0-3.1-1.65-5.15-4.3-5.15a3.7 3.7 0 0 0-3.33 1.83V8.5H9.56V20h3.38v-5.7c0-1.5.28-2.96 2.14-2.96 1.83 0 1.86 1.72 1.86 3.06V20h3.5v-6.6Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.46 21H2.38l7.17-8.2L2 3h6.33l4.37 5.77L17.75 3Zm-1.08 16.17h1.7L7.4 4.74H5.58l11.09 14.43Z"/></symbol>
+  </svg>
 
-    // Aparición suave de las secciones al bajar
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.pillar, .card, .split, .contact').forEach(el => { el.classList.add('reveal'); io.observe(el); });
+    document.querySelectorAll('.about, .pillars li, .forms article, .card, .shop, .contact').forEach(el => { el.classList.add('reveal'); io.observe(el); });
   </script>
+  <script src="menu.js"></script>
 </body>
 </html>
