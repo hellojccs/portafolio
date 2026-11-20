@@ -850,3 +850,7 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .gm-label .soon { font-size: 11px; line-height: 20px; padding: 0 10px; vertical-align: 6px; letter-spacing: .04em; }
 @media (prefers-reduced-motion: reduce) { .soon::before { animation: none; } }
 .shop { border-radius: 28px; }   /* mismas esquinas que la foto de Sobre mí */
+/* Campos de Contacto: vuelve el borde naranja y su hover cálido */
+.cform input { border-color: rgba(254,59,0,.85); background: transparent; }
+.cform input:hover { border-color: var(--orange); background: rgba(254,59,0,.07); }
+.cform input:focus { border-color: var(--lilac); background: rgba(204,191,252,.05); }
