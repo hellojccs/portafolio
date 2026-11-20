@@ -315,8 +315,8 @@
     <section id="contacto" class="section contact on-dark">
       <!-- Formulario: al enviarlo se abre WhatsApp con los datos ya escritos
            (no necesita servidor). Para cambiar el número, edita contact-form.js. -->
+      <p class="label">// Contacto</p>
       <div class="cform-wrap">
-        <h2 class="cform-title">Contáctame</h2>
         <p class="cform-sub">Cuéntame tu idea;<br>la llevamos al siguiente nivel.</p>
         <form class="cform" data-contact-form novalidate>
           <label class="cform-field"><span class="tm-sr">Nombre</span><input name="nombre" type="text" placeholder="Nombre" autocomplete="name" required></label>
@@ -324,7 +324,7 @@
           <label class="cform-field"><span class="tm-sr">Correo</span><input name="correo" type="email" placeholder="Correo" autocomplete="email"></label>
           <label class="cform-field"><span class="tm-sr">Teléfono</span><input name="telefono" type="tel" placeholder="Teléfono" autocomplete="tel"></label>
           <p class="cform-msg" role="status" aria-live="polite"></p>
-          <button type="submit" class="cform-send">Enviar mensaje</button>
+          <button type="submit" class="btn cform-send">Enviar mensaje <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></button>
         </form>
       </div>
     </section>

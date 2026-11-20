@@ -811,3 +811,17 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .cform input { height: 52px; padding: 0 18px; font-size: 13px; border-radius: 6px; }
 .cform-send { height: 60px; font-size: 14px; border-radius: 6px; }
 @media (max-width: 760px) { .cform input { height: 50px; } .cform-send { height: 56px; } }
+/* Contacto con el sistema visual: H1 36/44, H2 20/28, base 12/20, campos en píldora, botón CTA */
+.cform-wrap { max-width: 620px; margin: 0; text-align: left; }
+.cform-title { font-size: 36px; line-height: 44px; }                                   /* H1 */
+.cform-sub { margin-top: 12px; font-size: 20px; line-height: 28px; color: var(--paper); }  /* H2 */
+.cform { gap: 10px; margin-top: 32px; }
+.cform input { height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--line);
+  background: rgba(242,242,242,.03); font-size: 12px; line-height: 20px; }             /* base 12/20 */
+.cform input:hover { border-color: var(--grey); background: rgba(242,242,242,.05); }
+.cform input:focus { border-color: var(--orange); background: rgba(254,59,0,.05); }
+.cform input[aria-invalid="true"] { border-color: var(--lilac); }
+.cform-msg { margin: 0; padding-left: 20px; }
+.cform-send.btn { align-self: flex-start; height: 44px; font-size: 14px; line-height: 22px; border-radius: 999px; margin-top: 6px; cursor: pointer; }
+@media (max-width: 760px) { .cform input { height: 44px; } .cform-send.btn { height: 44px; } }
+.cform-sub { margin-top: 0; }
