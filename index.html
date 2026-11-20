@@ -118,15 +118,15 @@
       <h1 data-text-motion>Brand &amp; Visual Designer</h1>
       <p class="hero-text">
         <strong>Brand and Visual Designer</strong> enfocado en crear sistemas visuales y
-        desarrollar nuevos conceptos de marca. Cada proyecto se adapta a lo que tu
-        marca necesita a través de 4 servicios:
+        desarrollar nuevos conceptos de marca. Trabajo con una estructura de 4 etapas: elige la que tu marca necesita o combínalas.
       </p>
-      <ul class="chips">
-        <li><a href="#brand-strategy">Brand Strategy</a></li>
-        <li><a href="#brand-design">Brand Design</a></li>
-        <li><a href="#launch-systems">Launch Systems</a></li>
-        <li><a href="#studio-on-call">Studio on Call</a></li>
-      </ul>
+      <!-- Estructura de trabajo: 4 etapas que se pueden elegir por separado o combinar -->
+      <ol class="workflow" aria-label="Estructura de trabajo">
+        <li><span class="flow-num">01</span><span class="flow-name">Strategy</span><span class="flow-text">Entender la marca.</span></li>
+        <li><span class="flow-num">02</span><span class="flow-name">Design</span><span class="flow-text">Darle identidad.</span></li>
+        <li><span class="flow-num">03</span><span class="flow-name">Activation</span><span class="flow-text">Llevarla al mundo.</span></li>
+        <li><span class="flow-num">04</span><span class="flow-name">Partnership</span><span class="flow-text">Crecer juntos después.</span></li>
+      </ol>
       <a href="#contacto" class="btn">Work with me <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </section>
 
@@ -174,33 +174,6 @@
       </div>
     </section>
 
-    <!-- ============ PILARES ============ -->
-    <section id="pilares" class="section light">
-      <p class="label">// Pilares de comunicación</p>
-      <h2 class="pillars-title">Mis proyectos contienen <span class="hl">4 pilares</span> de comunicación.</h2>
-      <ol class="pillars">
-        <li>
-          <span class="num">01</span>
-          <h3>Strategy</h3>
-          <p>Entender la marca.</p>
-        </li>
-        <li>
-          <span class="num">02</span>
-          <h3>Design</h3>
-          <p>Darle identidad.</p>
-        </li>
-        <li>
-          <span class="num">03</span>
-          <h3>Activation</h3>
-          <p>Llevarla al mundo.</p>
-        </li>
-        <li>
-          <span class="num">04</span>
-          <h3>Partnership</h3>
-          <p>Crecer juntos después.</p>
-        </li>
-      </ol>
-    </section>
 
     <!-- ============ SERVICIOS ============
          Cada servicio tiene su descripción y su lista de entregables.
@@ -373,7 +346,7 @@
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.about, .pillars li, .services, .card, .shop, .contact').forEach(el => { el.classList.add('reveal'); io.observe(el); });
+    document.querySelectorAll('.about, .services, .card, .shop, .contact').forEach(el => { el.classList.add('reveal'); io.observe(el); });
   </script>
   <script src="glass-menu.js"></script>
   <script src="spotlight.js"></script>
