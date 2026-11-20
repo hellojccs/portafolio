@@ -749,3 +749,7 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .workflow li { background: rgba(204,191,252,.07); border: 1px solid rgba(204,191,252,.5); color: var(--lilac);
   backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
 .workflow .flow-text { color: rgba(242,242,242,.62); }
+/* Botón de Servicios alineado con la columna de las descripciones */
+.services-cta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 0 clamp(32px, 6vw, 96px); }
+.services-cta .btn { grid-column: 2; justify-self: start; }
+@media (max-width: 760px) { .services-cta { grid-template-columns: 1fr; } .services-cta .btn { grid-column: 1; } }
