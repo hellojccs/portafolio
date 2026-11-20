@@ -23,51 +23,29 @@
        - LinkedIn y X: busca los enlaces "#" con esos nombres.
        ========================================================= -->
 
-  <!-- ============ MENÚ EN PÍLDORA ============
-       Un menú flotante: la sección activa se ilumina en naranja
-       con un haz de luz encima. Para cambiar un nombre, edita el texto
-       dentro de <span>...</span>.
+  <!-- ============ MENÚ ============
+       Arriba se ve completo. Al bajar por la página se hace compacto:
+       se ocultan tu nombre y el botón, y aparece el botón de WhatsApp.
   -->
-  <header class="pillnav" data-pillnav>
-    <div class="beam" data-beam aria-hidden="true"><i></i></div>
-    <div class="floor" data-floor aria-hidden="true"></div>
-    <nav class="bar" aria-label="Menú principal">
-      <span class="rimlight" data-rimlight aria-hidden="true"></span>
-      <a href="#inicio" class="me" aria-label="Juan Carlos Carranza, inicio">
-        <img src="assets/img/personaje-mini.jpg" alt="" width="40" height="40">
-      </a>
-      <div class="tabs" data-tabs>
-        <span class="hover-pill" data-hover aria-hidden="true"></span>
-        <span class="active-pill" data-active aria-hidden="true"></span>
-        <a class="tab" href="#inicio">
-          <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-          <span>Inicio</span>
-        </a>
-        <a class="tab" href="#sobre-mi">
-          <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/></svg>
-          <span>Sobre mí</span>
-        </a>
-        <a class="tab" href="#proyectos">
-          <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg>
-          <span>Proyectos</span>
-        </a>
-        <a class="tab" href="#tienda">
-          <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          <span>Tienda</span>
-        </a>
-        <a class="tab" href="#contacto">
-          <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
-          <span>Escríbeme</span>
-        </a>
-      </div>
+  <header class="nav" data-nav>
+    <a href="#inicio" class="nav-brand" aria-label="Juan Carlos Carranza, inicio">
+      <img src="assets/img/personaje-mini.jpg" alt="" width="40" height="40">
+      <span class="nav-name">Juan Carlos Carranza Design &amp; Strategy</span>
+    </a>
+    <nav class="nav-links" aria-label="Menú principal">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#tienda">Tienda</a>
     </nav>
+    <a href="#contacto" class="btn btn-sm nav-cta">Work with me <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <a href="https://wa.me/52XXXXXXXXXX" class="icon-btn nav-wa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><use href="#i-wa"/></svg></a>
   </header>
 
   <!-- Botones flotantes -->
   <ul class="float" aria-label="Redes">
-    <li><a href="https://wa.me/52XXXXXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><use href="#i-wa"/></svg></a></li>
-    <li><a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><use href="#i-in"/></svg></a></li>
-    <li><a href="#" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><use href="#i-x"/></svg></a></li>
+    <li><a class="icon-btn" href="https://wa.me/52XXXXXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><use href="#i-wa"/></svg></a></li>
+    <li><a class="icon-btn" href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><use href="#i-in"/></svg></a></li>
+    <li><a class="icon-btn" href="#" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><use href="#i-x"/></svg></a></li>
   </ul>
 
   <main>
@@ -245,11 +223,15 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menú compacto al bajar por la página
+    const nav = document.querySelector('[data-nav]');
+    const onScroll = () => nav.classList.toggle('is-compact', scrollY > 80);
+    addEventListener('scroll', onScroll, { passive: true }); onScroll();
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
     document.querySelectorAll('.about, .pillars li, .forms article, .card, .shop, .contact').forEach(el => { el.classList.add('reveal'); io.observe(el); });
   </script>
-  <script src="menu.js"></script>
 </body>
 </html>
