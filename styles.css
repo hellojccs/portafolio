@@ -88,7 +88,7 @@ svg { width: 20px; height: 20px; flex: none; }
 }
 .nav-brand { flex: none; display: flex; align-items: center; gap: 12px; color: var(--orange); }
 .nav-brand img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
-.nav-name { font-family: var(--sans); font-size: 16px; letter-spacing: var(--track); white-space: nowrap; overflow: hidden; max-width: 420px; transition: max-width .35s ease, opacity .25s; }
+.nav-name { font-family: var(--mono); font-size: 14px; letter-spacing: 0; white-space: nowrap; overflow: hidden; max-width: 420px; transition: max-width .35s ease, opacity .25s; }
 .nav-links { display: flex; gap: 22px; }
 .nav-links a { font-family: var(--mono); font-size: 12px; line-height: 20px; text-transform: uppercase; color: var(--orange); white-space: nowrap; transition: color .2s; }
 .nav-links a:hover { color: var(--paper); }
@@ -138,7 +138,7 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .about-text strong { font-weight: 700; }
 .about-text .btn { align-self: flex-start; margin-top: 12px; }
 .facts { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; padding-top: 20px; border-top: 1px solid var(--line-l); text-align: left; }
-.facts b { display: block; font-family: var(--sans); font-weight: 400; font-size: 36px; line-height: 44px; letter-spacing: var(--track); color: var(--orange); }
+.facts b { display: block; font-family: var(--mono); font-weight: 400; font-size: 36px; line-height: 44px; letter-spacing: -0.04em; color: var(--orange); }
 .facts span { font-size: 10px; line-height: 20px; color: var(--grey-l); text-transform: uppercase; }
 
 /* ---------- Pilares ---------- */
@@ -155,7 +155,7 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .forms article { background: var(--lilac); color: var(--black); padding: 22px; min-height: 200px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; transition: background .25s, color .25s; }
 .forms article:hover { background: var(--black); color: var(--paper); }
 .forms h3 { font-family: var(--mono); font-weight: 400; font-size: 14px; line-height: 22px; letter-spacing: 0; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-.forms p { font-family: var(--sans); font-size: 20px; line-height: 28px; letter-spacing: var(--track); }   /* H2 */
+.forms p { font-family: var(--mono); font-size: 14px; line-height: 22px; }   /* lg */
 
 /* ---------- Proyectos ---------- */
 .head-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
