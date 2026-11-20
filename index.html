@@ -378,13 +378,14 @@
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.about, .pillars li, .service, .card, .shop, .contact').forEach(el => { el.classList.add('reveal'); io.observe(el); });
+    document.querySelectorAll('.about, .pillars li, .services, .card, .shop, .contact').forEach(el => { el.classList.add('reveal'); io.observe(el); });
   </script>
   <script src="glass-menu.js"></script>
   <script src="spotlight.js"></script>
   <script src="toy.js"></script>
   <script src="depth.js"></script>
   <script src="text-motion.js"></script>
+  <script src="services-tabs.js"></script>
   <script src="peek.js"></script>
 </body>
 </html>
