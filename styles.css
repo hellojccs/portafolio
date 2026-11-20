@@ -656,21 +656,40 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 }
 @media (prefers-reduced-motion: reduce) { .services.is-tabs .service { animation: none; } }
 
-/* Trayectoria y Freelance en "Sobre mí" (listas con líneas, estilo CV) */
-.cv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(36px, 6vw, 96px); margin-top: clamp(56px, 7vw, 96px); }
-.cv-label { font-size: 12px; line-height: 20px; letter-spacing: .2em; text-transform: uppercase; color: var(--grey-l);
-  padding-bottom: 16px; border-bottom: 1px solid var(--black); }
-.cv-list { list-style: none; }
-.cv-list li { display: grid; gap: 2px; padding: 18px 0 20px; border-bottom: 1px solid var(--line-l); }
-.cv-year { font-size: 12px; line-height: 20px; color: var(--orange); }
-.cv-name { font-family: var(--sans); font-size: 20px; line-height: 28px; letter-spacing: var(--track); }   /* H2 */
-.cv-role { font-size: 10px; line-height: 20px; text-transform: uppercase; color: var(--grey-l); }
-.cv-list li:hover .cv-name { color: var(--orange); }
-.cv-name { transition: color .2s; }
-@media (max-width: 760px) {
-  .cv { grid-template-columns: 1fr; gap: 48px; }
-}
-
 /* Título "Hello, web surfer!" (lettering de Juan Carlos) */
 .hello-title { margin: 0 0 clamp(40px, 5vw, 72px); }
 .hello-title img { width: min(100%, 820px); height: auto; }
+
+/* =========================================================
+   PÁGINA "SOBRE MÍ" (sobre-mi.html)
+   Foto a la izquierda (fija al bajar), texto y listas a la derecha.
+   ========================================================= */
+.am { display: grid; grid-template-columns: minmax(0, 38%) minmax(0, 1fr); min-height: 100svh; background: #000; color: var(--paper); }
+.am-photo { position: sticky; top: 0; height: 100svh; border-right: 1px solid rgba(254,59,0,.55); overflow: hidden; }
+.am-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.am-back { position: fixed; top: 20px; left: 20px; z-index: 10; height: 44px; padding: 0 22px 0 10px; }
+.am-back .arrow { transform: rotate(180deg); }
+.am-back:hover .arrow { transform: rotate(180deg) translateX(3px); }
+.am-main { min-width: 0; }
+.am-intro { padding: clamp(96px, 9vw, 120px) clamp(24px, 4vw, 56px) clamp(56px, 6vw, 88px); border-bottom: 1px solid rgba(204,191,252,.55); }
+.am-intro h1 { margin: 0 0 clamp(36px, 4vw, 56px); text-align: center; }
+.am-intro h1 img { width: min(100%, 640px); height: auto; margin: 0 auto; }
+.am-intro p { font-size: 12px; line-height: 20px; text-align: justify; hyphens: auto; }
+.am-intro p + p { margin-top: 20px; }
+.am-block { padding: clamp(48px, 5vw, 72px) clamp(24px, 4vw, 56px) 0; }
+.am-block:last-of-type { padding-bottom: clamp(72px, 8vw, 120px); }
+.am-block h2 { color: var(--orange); font-size: 36px; line-height: 44px; padding-bottom: 24px; border-bottom: 1px solid rgba(254,59,0,.55); }   /* H1 */
+.am-list { list-style: none; padding-top: 12px; }
+.am-list li { display: grid; grid-template-columns: 1fr 1.1fr .6fr; gap: 4px 24px; padding: 10px 0; align-items: baseline; }
+.am-name { font-size: 14px; line-height: 22px; }
+.am-role, .am-year { font-size: 12px; line-height: 20px; text-transform: uppercase; }
+.am-cta { margin-top: clamp(48px, 5vw, 72px); }
+@media (max-width: 900px) {
+  .am { grid-template-columns: 1fr; }
+  .am-photo { position: relative; height: 72svh; border-right: 0; border-bottom: 1px solid rgba(254,59,0,.55); }
+  .am-intro { padding-top: 48px; }
+  .am-list li { grid-template-columns: 1fr; gap: 0; padding: 14px 0; border-bottom: 1px solid rgba(242,242,242,.12); }
+  .am-role { color: var(--lilac); }
+  .am-year { color: var(--grey); }
+}
+.am-page { background: #000; }

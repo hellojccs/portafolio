@@ -131,7 +131,7 @@
     </section>
 
     <!-- ============ SOBRE MÍ ============ -->
-    <section id="sobre-mi" class="section light">
+    <section id="sobre-mi" class="section on-dark">
       <p class="label">// Sobre mí</p>
       <h2 class="hello-title"><img src="assets/img/hello-web-surfer.webp" alt="Hello, web surfer!" width="2475" height="379"></h2>
       <div class="about">
@@ -169,29 +169,7 @@
             Actualmente colaboro en la comunicación de imagen social del
             <strong>Metro de la Ciudad de México.</strong>
           </p>
-        </div>
-      </div>
-      <div class="cv">
-        <div class="cv-col">
-          <p class="cv-label">Trayectoria</p>
-          <ol class="cv-list">
-            <li><span class="cv-year">2022 — Actualmente</span><span class="cv-name">Sindicato Nacional del Metro CDMX</span><span class="cv-role">Content Manager &amp; Diseñador Gráfico</span></li>
-            <li><span class="cv-year">2022 — 2024</span><span class="cv-name">Grupo Cinbersol</span><span class="cv-role">Gerente de Comunicación e Imagen Corporativa</span></li>
-            <li><span class="cv-year">2021 — 2022</span><span class="cv-name">Grupo Cinbersol</span><span class="cv-role">Diseñador Gráfico</span></li>
-            <li><span class="cv-year">2020 — 2021</span><span class="cv-name">Visacom</span><span class="cv-role">Community Manager</span></li>
-          </ol>
-        </div>
-        <div class="cv-col">
-          <p class="cv-label">Freelance</p>
-          <ol class="cv-list">
-            <li><span class="cv-year">2026</span><span class="cv-name">Holy</span><span class="cv-role">Branding &amp; Concepto de marca</span></li>
-            <li><span class="cv-year">2025</span><span class="cv-name">Gloup Wellness Lab</span><span class="cv-role">Branding, Concepto de marca &amp; Website</span></li>
-            <li><span class="cv-year">2024</span><span class="cv-name">Creciente</span><span class="cv-role">Branding</span></li>
-            <li><span class="cv-year">2023</span><span class="cv-name">The Joy Room</span><span class="cv-role">Branding</span></li>
-            <li><span class="cv-year">2023</span><span class="cv-name">Dirty Dandy</span><span class="cv-role">Concepto de marca</span></li>
-            <li><span class="cv-year">2023</span><span class="cv-name">REST Electrolytes</span><span class="cv-role">Branding &amp; Concepto de marca</span></li>
-            <li><span class="cv-year">2022</span><span class="cv-name">Casa Lulu</span><span class="cv-role">Re Branding</span></li>
-          </ol>
+          <a href="sobre-mi.html" class="btn btn-lilac">Conoce más <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </section>
@@ -395,7 +373,7 @@
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.about, .cv-col, .pillars li, .services, .card, .shop, .contact').forEach(el => { el.classList.add('reveal'); io.observe(el); });
+    document.querySelectorAll('.about, .pillars li, .services, .card, .shop, .contact').forEach(el => { el.classList.add('reveal'); io.observe(el); });
   </script>
   <script src="glass-menu.js"></script>
   <script src="spotlight.js"></script>
