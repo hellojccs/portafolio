@@ -693,3 +693,37 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
   .am-year { color: var(--grey); }
 }
 .am-page { background: #000; }
+
+/* =========================================================
+   HERO + SOBRE MÍ COMO UN SOLO ESPACIO
+   Sin línea entre ellos; "Sobre mí" continúa las luces naranja y
+   lila del hero y el mismo grano, y todo se funde en el negro.
+   ========================================================= */
+#sobre-mi { border-top: 0; position: relative; isolation: isolate; }
+#sobre-mi::before, #sobre-mi::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%);
+  z-index: -1; pointer-events: none;
+}
+#sobre-mi::before {
+  background:
+    radial-gradient(55% 45% at 22% 38%, rgba(254,59,0,.13), rgba(254,59,0,0) 70%),     /* luz naranja detrás de tu foto */
+    radial-gradient(50% 40% at 82% 18%, rgba(204,191,252,.10), rgba(204,191,252,0) 70%), /* lila que viene del hero */
+    linear-gradient(180deg, var(--black) 0%, #15140f 55%, var(--black) 100%);
+}
+#sobre-mi::after {                                          /* mismo grano que el hero */
+  opacity: .09; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.hero .bg-grain { opacity: .09; }
+.bg-vignette { background:
+  radial-gradient(100% 70% at 50% 45%, transparent 40%, rgba(8,7,6,.6) 100%),
+  linear-gradient(180deg, rgba(12,11,9,.6), transparent 22%, transparent 70%, var(--black) 100%); }
+.about-photo { box-shadow: 0 30px 80px -30px rgba(254,59,0,.35), 0 0 0 1px rgba(242,242,242,.06); }
+/* fundido: el final del hero y el inicio de Sobre mí son el mismo negro */
+.hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 32%; z-index: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(28,27,23,0), var(--black) 92%); }
+#sobre-mi::after { -webkit-mask-image: linear-gradient(180deg, transparent, #000 35%); mask-image: linear-gradient(180deg, transparent, #000 35%); }
+#sobre-mi::before { background:
+    radial-gradient(55% 45% at 22% 45%, rgba(254,59,0,.13), rgba(254,59,0,0) 70%),
+    radial-gradient(50% 40% at 82% 30%, rgba(204,191,252,.10), rgba(204,191,252,0) 70%),
+    var(--black); }
