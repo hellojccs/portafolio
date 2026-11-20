@@ -771,3 +771,35 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .about-photo::after { display: none; }
 @keyframes ring { to { --ring: 360deg; } }
 @media (prefers-reduced-motion: reduce) { .about-photo { animation: none; } }
+
+/* =========================================================
+   CONTACTO: formulario (Nombre, Marca, Correo, Teléfono)
+   ========================================================= */
+.cform-wrap { max-width: 1100px; margin: 0 auto; text-align: center; }
+.cform-title { color: var(--orange); font-size: clamp(40px, 5vw, 64px); line-height: 1.1; }
+.cform-sub { margin-top: clamp(28px, 4vw, 48px); font-family: var(--sans); font-size: clamp(20px, 2.2vw, 28px); line-height: 1.45; letter-spacing: var(--track); color: var(--paper); }
+.cform { display: flex; flex-direction: column; gap: 16px; margin-top: clamp(40px, 5vw, 64px); }
+.cform-field { display: block; }
+.cform input {
+  width: 100%; height: 76px; padding: 0 26px; border-radius: 8px;
+  background: transparent; border: 1px solid rgba(254,59,0,.85); color: var(--paper);
+  font-family: var(--mono); font-size: 16px; line-height: 22px; outline: none;
+  transition: border-color .2s, background .2s;
+}
+.cform input::placeholder { color: var(--grey); }
+.cform input:hover { background: rgba(254,59,0,.04); }
+.cform input:focus { border-color: var(--lilac); background: rgba(204,191,252,.05); }
+.cform input[aria-invalid="true"] { border-color: var(--lilac); }
+.cform-msg { min-height: 20px; font-size: 12px; line-height: 20px; color: var(--lilac); text-align: left; margin: -4px 0 -8px; }
+.cform-send {
+  height: 100px; border-radius: 8px; border: 2px solid var(--paper); background: var(--orange); color: var(--paper);
+  font-family: var(--mono); font-size: 18px; line-height: 22px; text-transform: uppercase; cursor: pointer;
+  transition: background .2s, color .2s, transform .15s;
+}
+.cform-send:hover { background: var(--black); color: var(--paper); border-color: var(--orange); }   /* naranja → negro */
+.cform-send:active { transform: scale(.99); }
+.cform-send:focus-visible { outline: 2px solid var(--lilac); outline-offset: 3px; }
+@media (max-width: 760px) {
+  .cform input { height: 60px; font-size: 14px; padding: 0 18px; }
+  .cform-send { height: 72px; font-size: 14px; }
+}

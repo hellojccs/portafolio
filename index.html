@@ -313,11 +313,19 @@
 
     <!-- ============ CONTACTO ============ -->
     <section id="contacto" class="section contact on-dark">
-      <p class="label">// Contacto</p>
-      <h2 class="big">¿Tienes una marca por construir?</h2>
-      <div class="contact-actions">
-        <a href="https://wa.me/525536771350" class="btn" target="_blank" rel="noopener">Work with me <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <a href="mailto:hola@tucorreo.com" class="mail">hola@tucorreo.com</a>
+      <!-- Formulario: al enviarlo se abre WhatsApp con los datos ya escritos
+           (no necesita servidor). Para cambiar el número, edita contact-form.js. -->
+      <div class="cform-wrap">
+        <h2 class="cform-title">Contáctame</h2>
+        <p class="cform-sub">Cuéntame tu idea;<br>la llevamos al siguiente nivel.</p>
+        <form class="cform" data-contact-form novalidate>
+          <label class="cform-field"><span class="tm-sr">Nombre</span><input name="nombre" type="text" placeholder="Nombre" autocomplete="name" required></label>
+          <label class="cform-field"><span class="tm-sr">Marca</span><input name="marca" type="text" placeholder="Marca" autocomplete="organization"></label>
+          <label class="cform-field"><span class="tm-sr">Correo</span><input name="correo" type="email" placeholder="Correo" autocomplete="email"></label>
+          <label class="cform-field"><span class="tm-sr">Teléfono</span><input name="telefono" type="tel" placeholder="Teléfono" autocomplete="tel"></label>
+          <p class="cform-msg" role="status" aria-live="polite"></p>
+          <button type="submit" class="cform-send">Enviar mensaje</button>
+        </form>
       </div>
     </section>
 
@@ -356,6 +364,7 @@
   <script src="depth.js"></script>
   <script src="text-motion.js"></script>
   <script src="services-tabs.js"></script>
+  <script src="contact-form.js"></script>
   <script src="peek.js"></script>
 </body>
 </html>
