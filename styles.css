@@ -622,3 +622,8 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 @media (max-width: 1000px) { .about-photo { max-width: 360px; } }
 .about-sub { color: var(--orange); font-size: 10px; line-height: 20px; text-transform: uppercase; text-align: left; margin-top: 8px; }
 .about-sub:first-child { margin-top: 0; }
+
+/* Animación del título "Word Stagger": las palabras suben una por una */
+.js [data-text-motion]:not(.tm-ready) { visibility: hidden; }   /* sin parpadeo antes de animar */
+.tm-word { display: inline-block; white-space: nowrap; transform-origin: 50% 100%; will-change: transform, opacity; }
+.tm-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
