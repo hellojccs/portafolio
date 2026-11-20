@@ -825,3 +825,8 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .cform-send.btn { align-self: flex-start; height: 44px; font-size: 14px; line-height: 22px; border-radius: 999px; margin-top: 6px; cursor: pointer; }
 @media (max-width: 760px) { .cform input { height: 44px; } .cform-send.btn { height: 44px; } }
 .cform-sub { margin-top: 0; }
+/* Contacto centrado */
+#contacto .label { text-align: center; }
+.cform-wrap { margin: 0 auto; text-align: center; }
+.cform-send.btn { align-self: center; }
+.cform-msg { text-align: center; padding-left: 0; }
