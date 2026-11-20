@@ -88,7 +88,7 @@ svg { width: 20px; height: 20px; flex: none; }
 }
 .nav-brand { flex: none; display: flex; align-items: center; gap: 12px; color: var(--orange); }
 .nav-brand img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
-.nav-name { font-family: var(--mono); font-size: 14px; letter-spacing: 0; white-space: nowrap; overflow: hidden; max-width: 420px; transition: max-width .35s ease, opacity .25s; }
+.nav-name { font-family: var(--sans); font-size: 16px; letter-spacing: var(--track); white-space: nowrap; overflow: hidden; max-width: 420px; transition: max-width .35s ease, opacity .25s; }
 .nav-links { display: flex; gap: 22px; }
 .nav-links a { font-family: var(--mono); font-size: 12px; line-height: 20px; text-transform: uppercase; color: var(--orange); white-space: nowrap; transition: color .2s; }
 .nav-links a:hover { color: var(--paper); }
