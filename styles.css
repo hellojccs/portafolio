@@ -854,3 +854,4 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .cform input { border-color: rgba(254,59,0,.85); background: transparent; }
 .cform input:hover { border-color: var(--orange); background: rgba(254,59,0,.07); }
 .cform input:focus { border-color: var(--lilac); background: rgba(204,191,252,.05); }
+.shop h2 { color: var(--paper); }   /* "Próximamente." en gris claro de la paleta */
