@@ -628,3 +628,17 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
   .bg-horizon { top: 43%; }
   .bg-floor { height: 67%; }
 }
+
+/* Foto de Juan Carlos en "Sobre mí" */
+.about-head { display: flex; flex-direction: column; gap: clamp(28px, 4vw, 48px); }
+.about-photo { position: relative; max-width: 440px; border-radius: 28px; overflow: hidden; background: var(--black);
+  box-shadow: 0 30px 60px -24px rgba(28,27,23,.55); }
+.about-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+.about-photo:hover img { transform: scale(1.03); }
+.about-photo::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(242,242,242,.08); }
+.about-photo figcaption { position: absolute; left: 16px; bottom: 16px; padding: 6px 12px; border-radius: 999px;
+  background: var(--orange); color: var(--paper); font-size: 10px; line-height: 20px; text-transform: uppercase; letter-spacing: .02em; }
+@media (max-width: 1000px) { .about-photo { max-width: 360px; } }
+.about-sub { color: var(--orange); font-size: 10px; line-height: 20px; text-transform: uppercase; text-align: left; margin-top: 8px; }
+.about-sub:first-child { margin-top: 0; }
