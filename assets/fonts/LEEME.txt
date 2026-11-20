@@ -1,2 +1,0 @@
-Aquí van los archivos de la tipografía Rinter:
-- Rinter-Regular.woff2 (o Rinter-Regular.otf)
