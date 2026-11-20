@@ -81,20 +81,31 @@ svg { width: 20px; height: 20px; flex: none; }
   position: fixed; top: 26px; left: 50%; transform: translateX(-50%); z-index: 60;
   width: max-content; max-width: calc(100vw - 24px);
   display: flex; align-items: center; gap: 28px;
-  height: 60px; padding: 0 8px; border-radius: 999px;
-  background: var(--black); border: 1.5px solid var(--paper);
-  box-shadow: 0 12px 30px -12px rgba(0,0,0,.6);
+  height: 62px; padding: 0 8px; border-radius: 999px;
+  /* vidrio esmerilado oscuro */
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.015) 50%, rgba(255,255,255,.03)),
+    rgba(20, 19, 17, .9);
+  backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 30px 60px -20px rgba(0,0,0,.95), 0 0 0 1px rgba(0,0,0,.6);
   transition: gap .35s ease;
 }
 .nav-brand { flex: none; display: flex; align-items: center; gap: 12px; color: var(--orange); }
 .nav-brand img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
 .nav-name { font-family: var(--sans); font-size: 16px; letter-spacing: var(--track); white-space: nowrap; overflow: hidden; max-width: 420px; transition: max-width .35s ease, opacity .25s; }
 .nav-links { position: relative; display: flex; align-items: center; height: 42px; gap: 2px; }
-.nav-links .tab {
-  position: relative; z-index: 2; display: flex; align-items: center; height: 100%; padding: 0 16px; border-radius: 999px;
-  font-family: var(--mono); font-size: 12px; line-height: 20px; text-transform: uppercase; color: var(--orange); white-space: nowrap; transition: color .3s;
+.nav::before {                       /* borde fino de luz: naranja a la izquierda, lila a la derecha */
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: linear-gradient(100deg, rgba(254,59,0,.45), rgba(255,255,255,.12) 18%, rgba(255,255,255,.05) 50%, rgba(204,191,252,.35));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
 }
-.nav-links .tab:hover, .nav-links .tab.is-active, .nav-links .tab.is-lit { color: var(--paper); }
+.nav-links { height: 48px; }
+.nav-links .tab {
+  position: relative; z-index: 2; display: flex; align-items: center; height: 100%; padding: 0 20px; border-radius: 999px;
+  font-family: var(--mono); font-size: 14px; line-height: 22px; text-transform: uppercase; color: #6E6C67; white-space: nowrap; transition: color .3s;
+}
+.nav-links .tab:hover { color: #B9B7B1; }
+.nav-links .tab.is-active, .nav-links .tab.is-lit { color: var(--paper); }
 .nav-links .tab:focus-visible { outline: 2px solid rgba(242,242,242,.6); outline-offset: -3px; }
 
 /* Botón CTA del menú, con las reglas de los botones: lila → naranja al pasar el mouse → negro al presionar */
@@ -103,19 +114,26 @@ svg { width: 20px; height: 20px; flex: none; }
 .nav .nav-cta:active { background: var(--black); color: var(--paper); border-color: var(--paper); }
 
 /* ---------- Efecto spotlight en el menú ---------- */
-.nav { --light: 255, 205, 170; }
+.nav { --light: 228, 240, 236; }
 .active-pill, .hover-pill { position: absolute; top: 0; left: 0; height: 100%; width: 0; border-radius: 999px; pointer-events: none; opacity: 0; }
-.active-pill {                       /* la píldora activa sigue la regla del CTA naranja: naranja con borde claro */
-  z-index: 1; background: var(--orange); border: 1.5px solid var(--paper);
-  box-shadow: inset 0 1px 0 rgba(255,235,220,.45), 0 8px 22px -8px rgba(254,59,0,.8), 0 0 26px -4px rgba(255,120,60,.45);
+.active-pill {                       /* píldora de vidrio en relieve, con la forma de los botones CTA */
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(255,255,255,.13), rgba(255,255,255,.05) 55%, rgba(255,255,255,.07));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.22), 0 8px 20px -8px rgba(0,0,0,.9), 0 0 24px -6px rgba(230,240,236,.22);
+}
+.active-pill::after, .hover-pill::after {   /* aro de luz del vidrio */
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.06) 55%, rgba(204,191,252,.3));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
 }
 .active-pill::before {               /* destello en el borde superior, donde cae la luz */
   content: ""; position: absolute; left: 18%; right: 18%; top: -2px; height: 2px; border-radius: 2px;
   background: radial-gradient(closest-side, rgba(255,245,230,.95), transparent); filter: blur(.5px);
 }
-.hover-pill { z-index: 0; border: 1.5px solid rgba(242,242,242,.35); }   /* la regla del CTA negro: negro con borde */
+.hover-pill { z-index: 0; background: rgba(255,255,255,.04); }
+.hover-pill::after { background: linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.02)); }
 .beam {
-  position: absolute; left: 0; bottom: 50px; width: 0; height: 150px; pointer-events: none; opacity: 0;
+  position: absolute; left: 0; bottom: 54px; width: 0; height: 160px; pointer-events: none; opacity: 0;
   transform-origin: 50% 100%; mix-blend-mode: screen; filter: blur(5px);
 }
 .beam::before, .beam i {
@@ -130,9 +148,9 @@ svg { width: 20px; height: 20px; flex: none; }
 }
 @keyframes breathe { 50% { opacity: .35; } }
 .rimlight { position: absolute; top: -1.5px; left: 0; width: 0; height: 2px; z-index: 3; pointer-events: none; opacity: 0;
-  background: radial-gradient(closest-side, rgba(255,236,214,.95), rgba(255,236,214,0)); }
-.floor { position: absolute; top: 44px; left: 0; width: 0; height: 44px; border-radius: 50%; pointer-events: none; opacity: 0;
-  background: rgba(255,110,50,.35); filter: blur(18px); mix-blend-mode: screen; z-index: -1; }
+  background: radial-gradient(closest-side, rgba(228,255,246,.9), rgba(228,255,246,0)); }
+.floor { position: absolute; top: 48px; left: 0; width: 0; height: 44px; border-radius: 50%; pointer-events: none; opacity: 0;
+  background: rgba(200,235,225,.22); filter: blur(18px); mix-blend-mode: screen; z-index: -1; }
 .nav-cta, .nav-wa { transition: opacity .25s; }
 .nav-wa { display: none; }
 /* Versión compacta (al bajar) */
