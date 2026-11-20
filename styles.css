@@ -657,8 +657,8 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 @media (prefers-reduced-motion: reduce) { .services.is-tabs .service { animation: none; } }
 
 /* Título "Hello, web surfer!" (lettering de Juan Carlos) */
-.hello-title { margin: 0 0 clamp(40px, 5vw, 72px); }
-.hello-title img { width: min(100%, 820px); height: auto; }
+.hello-title { margin: 0 0 16px; }
+.hello-title img { width: min(100%, 420px); height: auto; }
 
 /* =========================================================
    PÁGINA "SOBRE MÍ" (sobre-mi.html)
