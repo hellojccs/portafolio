@@ -753,3 +753,5 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .services-cta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 0 clamp(32px, 6vw, 96px); }
 .services-cta .btn { grid-column: 2; justify-self: start; }
 @media (max-width: 760px) { .services-cta { grid-template-columns: 1fr; } .services-cta .btn { grid-column: 1; } }
+.services.is-tabs .service { border-bottom: 0; }
+.services.is-tabs { margin-bottom: 8px; }
