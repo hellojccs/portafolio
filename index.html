@@ -93,7 +93,18 @@
   <main>
 
     <!-- ============ PORTADA ============ -->
-    <section id="inicio" class="hero on-dark">
+    <section id="inicio" class="hero on-dark" data-depth>
+      <!-- Fondo con profundidad: viñeta, auroras de color, foco de luz,
+           piso en perspectiva y grano. Se mueve un poco con el mouse. -->
+      <div class="hero-bg" aria-hidden="true">
+        <span class="bg-aurora a1"></span>
+        <span class="bg-aurora a2"></span>
+        <span class="bg-cone"></span>
+        <span class="bg-floor"></span>
+        <span class="bg-horizon"></span>
+        <span class="bg-vignette"></span>
+        <span class="bg-grain"></span>
+      </div>
       <!-- Tu personaje: cae y rebota al cargar, flota, te sigue con la mirada
            (se inclina hacia el mouse) y salta al tocarlo. -->
       <button class="toy" type="button" aria-label="Saludar" data-toy>
@@ -222,7 +233,6 @@
             <span class="tag">Add-on opcional</span>
           </div>
           <div class="service-body">
-            <p class="service-q">¿Dónde vive tu marca después de la entrega?</p>
             <p>Entro en acción cuando el trabajo base está listo, desarrollando los assets y touchpoints que le dan vida a todo. Es un add-on opcional, con alcance y precio independientes de mis servicios principales.</p>
             <p>Algunas marcas siguen solas desde aquí. Otras prefieren tenerme cerca. Me adapto a cualquiera de las dos.</p>
             <ul class="deliverables">
@@ -348,6 +358,7 @@
   <script src="glass-menu.js"></script>
   <script src="spotlight.js"></script>
   <script src="toy.js"></script>
+  <script src="depth.js"></script>
   <script src="peek.js"></script>
 </body>
 </html>

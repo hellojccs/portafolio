@@ -552,7 +552,6 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .service-head h3 { font-size: 36px; line-height: 44px; }   /* H1 */
 .service-head .tag { align-self: center; }
 .service-body { display: flex; flex-direction: column; gap: 14px; font-size: 14px; line-height: 22px; }
-.service-q { font-family: var(--sans); font-size: 20px; line-height: 28px; letter-spacing: var(--track); }   /* H2 */
 .deliverables { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
 .deliverables li {
   font-size: 12px; line-height: 20px; text-transform: uppercase; padding: 6px 14px; border-radius: 999px;
@@ -563,4 +562,69 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 @media (max-width: 760px) {
   .service { grid-template-columns: 1fr; }
   .service-head h3 { font-size: 28px; line-height: 36px; }
+}
+
+/* =========================================================
+   FONDO DEL HERO CON PROFUNDIDAD
+   Capas (de atrás hacia adelante): auroras naranja y lila,
+   foco de luz desde arriba, piso en perspectiva que se pierde
+   en el horizonte, viñeta y grano. --mx / --my vienen de depth.js
+   (posición del mouse, de -1 a 1) para un leve efecto parallax.
+   ========================================================= */
+.hero { position: relative; isolation: isolate; overflow: hidden; --mx: 0; --my: 0; }
+.hero > :not(.hero-bg) { position: relative; z-index: 1; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+  background: radial-gradient(120% 90% at 50% 38%, #2a2822 0%, #1c1b17 45%, #0c0b09 100%); }
+.hero-bg > span { position: absolute; display: block; will-change: transform; }
+
+.bg-aurora { width: 70vmax; aspect-ratio: 1; border-radius: 50%; filter: blur(90px); mix-blend-mode: screen; }
+.bg-aurora.a1 { left: -22vmax; top: -18vmax; opacity: .38;
+  background: radial-gradient(circle, rgba(254,59,0,.9), rgba(254,59,0,0) 62%);
+  transform: translate(calc(var(--mx) * -30px), calc(var(--my) * -24px));
+  animation: aurora1 18s ease-in-out infinite alternate; }
+.bg-aurora.a2 { right: -26vmax; bottom: -30vmax; opacity: .26;
+  background: radial-gradient(circle, rgba(204,191,252,.9), rgba(204,191,252,0) 62%);
+  transform: translate(calc(var(--mx) * -40px), calc(var(--my) * -30px));
+  animation: aurora2 22s ease-in-out infinite alternate; }
+@keyframes aurora1 { to { translate: 8vmax 6vmax; scale: 1.15; } }
+@keyframes aurora2 { to { translate: -10vmax -6vmax; scale: .9; } }
+
+.bg-cone { left: 50%; top: -10%; width: min(900px, 140vw); height: 95%;   /* foco de luz sobre el personaje */
+  translate: -50% 0; transform: translateX(calc(var(--mx) * 18px));
+  background: linear-gradient(180deg, rgba(255,236,222,.16), rgba(255,236,222,.04) 55%, rgba(255,236,222,0) 80%);
+  clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%); filter: blur(28px); mix-blend-mode: screen;
+  animation: cone 6s ease-in-out infinite; }
+@keyframes cone { 50% { opacity: .75; } }
+
+.bg-floor { left: -50%; right: -50%; bottom: -10%; height: 57%;   /* piso en perspectiva */
+  background-image:
+    linear-gradient(rgba(242,242,242,.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242,242,242,.10) 1px, transparent 1px);
+  background-size: 64px 64px; background-position: 50% 0;
+  transform-origin: 50% 0;
+  transform: perspective(520px) rotateX(64deg) translateX(calc(var(--mx) * -40px));
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 45%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 45%);
+  animation: floor-run 14s linear infinite; }
+@keyframes floor-run { to { background-position: 50% 64px; } }
+
+.bg-horizon { left: 0; right: 0; top: 53%; height: 2px;   /* línea de luz en el horizonte */
+  background: radial-gradient(closest-side, rgba(254,120,60,.55), rgba(254,59,0,0));
+  filter: blur(1px); box-shadow: 0 0 40px 8px rgba(254,59,0,.12); }
+
+.bg-vignette { inset: 0; background:
+  radial-gradient(100% 70% at 50% 45%, transparent 40%, rgba(8,7,6,.75) 100%),
+  linear-gradient(180deg, rgba(12,11,9,.6), transparent 22%, transparent 78%, var(--black)); }
+
+.bg-grain { inset: -50%; opacity: .09; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.2s steps(6) infinite; }
+@keyframes grain { 0%{transform:translate(0,0)} 20%{transform:translate(-3%,2%)} 40%{transform:translate(2%,-3%)} 60%{transform:translate(-2%,-1%)} 80%{transform:translate(3%,3%)} }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg > span { animation: none !important; }
+}
+@media (max-width: 760px) {
+  .bg-horizon { top: 43%; }
+  .bg-floor { height: 67%; }
 }
