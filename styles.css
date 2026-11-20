@@ -803,3 +803,11 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
   .cform input { height: 60px; font-size: 14px; padding: 0 18px; }
   .cform-send { height: 72px; font-size: 14px; }
 }
+/* Contacto más compacto */
+.cform-wrap { max-width: 620px; }
+.cform-title { font-size: clamp(32px, 3.4vw, 44px); }
+.cform-sub { margin-top: 20px; font-size: clamp(16px, 1.5vw, 20px); }
+.cform { gap: 12px; margin-top: 36px; }
+.cform input { height: 52px; padding: 0 18px; font-size: 13px; border-radius: 6px; }
+.cform-send { height: 60px; font-size: 14px; border-radius: 6px; }
+@media (max-width: 760px) { .cform input { height: 50px; } .cform-send { height: 56px; } }
