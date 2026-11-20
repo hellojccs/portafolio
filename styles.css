@@ -1,3 +1,12 @@
+/* Tipografía Rinter: coloca los archivos en assets/fonts/ con estos nombres.
+   Mientras no estén, el sitio usa Inter como respaldo. */
+@font-face {
+  font-family: "Rinter";
+  src: url("assets/fonts/Rinter-Regular.woff2") format("woff2"),
+       url("assets/fonts/Rinter-Regular.otf") format("opentype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+
 /* =========================================================
    COLORES Y TIPOGRAFÍA
    Cambia estos valores para ajustar toda la paleta del sitio.
@@ -16,7 +25,7 @@
   --tile:   #262520;  /* fondo de tarjetas */
 
   /* Tipografía del sistema visual */
-  --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --sans: "Rinter", "Inter", "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
   --track: -0.02em;   /* tracking -20 */
   --gutter: clamp(16px, 4vw, 56px);
