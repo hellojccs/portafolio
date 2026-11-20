@@ -445,54 +445,35 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 }
 
 /* =========================================================
-   BOTONES DE VIDRIO — el mismo vidrio del menú, en todos los botones.
+   BOTONES PLANOS — color sólido, sin brillos ni sombras.
    Cada botón conserva su color (--tint) y sus reglas al pasar el mouse.
    ========================================================= */
 .btn, .icon-btn, .chips a, .burger {
-  --tint: var(--orange);           /* color del vidrio */
-  --glow: rgba(254, 59, 0, .45);   /* resplandor */
-  position: relative; isolation: isolate;
+  --tint: var(--orange);
   border: 0 !important;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.26), rgba(255,255,255,.05) 55%, rgba(255,255,255,.12)),
-    var(--tint) !important;
-  backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.45),          /* brillo superior */
-    inset 0 -2px 6px rgba(0,0,0,.18),
-    0 8px 20px -8px rgba(0,0,0,.7),               /* sombra suave */
-    0 0 24px -6px var(--glow) !important;         /* resplandor del color */
-  transition: background .25s, color .25s, box-shadow .25s, transform .15s;
-}
-/* aro de luz del vidrio */
-.btn::after, .icon-btn::after, .chips a::after, .burger::after {
-  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; pointer-events: none;
-  background: linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.12) 55%, rgba(255,255,255,.4));
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
-}
-/* destello en el borde superior */
-.btn::before, .icon-btn::before {
-  content: ""; position: absolute; left: 18%; right: 18%; top: -1px; height: 2px; border-radius: 2px; pointer-events: none;
-  background: radial-gradient(closest-side, rgba(255,250,240,.95), transparent); filter: blur(.5px);
+  background: var(--tint) !important;
+  box-shadow: none !important;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+  transition: background .2s, color .2s, transform .15s;
 }
 .btn:active, .icon-btn:active, .chips a:active { transform: scale(.97); }
 
 /* Reglas de color (las mismas de siempre) */
 .btn { color: var(--paper); }
-.btn:hover        { --tint: rgba(28,27,23,.88); --glow: rgba(0,0,0,0); color: var(--paper); }          /* naranja → negro */
-.btn-lilac        { --tint: var(--lilac); --glow: rgba(204,191,252,.5); color: var(--black); }
-.btn-lilac:hover  { --tint: var(--orange); --glow: rgba(254,59,0,.45); color: var(--paper); }       /* lila → naranja */
-.nav .nav-cta        { --tint: var(--lilac); --glow: rgba(204,191,252,.5); color: var(--black); }
-.nav .nav-cta:hover  { --tint: var(--orange); --glow: rgba(254,59,0,.45); color: var(--paper); }
-.nav .nav-cta:active { --tint: rgba(28,27,23,.9); --glow: rgba(0,0,0,0); color: var(--paper); }    /* negro al presionar */
-.icon-btn         { --tint: rgba(58,57,53,.85); --glow: rgba(0,0,0,0); color: var(--paper); }
-.icon-btn:hover   { --tint: var(--orange); --glow: rgba(254,59,0,.45); }
-.burger           { --tint: rgba(58,57,53,.85); --glow: rgba(0,0,0,0); }
-.chips a          { --tint: var(--lilac); --glow: rgba(204,191,252,.4); color: var(--black); }
-.chips a:hover    { --tint: rgba(28,27,23,.88); --glow: rgba(0,0,0,0); color: var(--paper); }
-.chips a          { border-radius: 4px; }
-/* sobre fondo claro, un contorno suave para que el aro se lea */
-.light .btn::after { background: linear-gradient(180deg, rgba(255,255,255,.75), rgba(28,27,23,.25) 55%, rgba(28,27,23,.45)); }
+.btn:hover        { --tint: var(--black); color: var(--paper); }       /* naranja → negro */
+.btn-lilac        { --tint: var(--lilac); color: var(--black); }
+.btn-lilac:hover  { --tint: var(--orange); color: var(--paper); }      /* lila → naranja */
+.nav .nav-cta        { --tint: var(--lilac); color: var(--black); }
+.nav .nav-cta:hover  { --tint: var(--orange); color: var(--paper); }
+.nav .nav-cta:active { --tint: var(--black); color: var(--paper); }    /* negro al presionar */
+.icon-btn         { --tint: #3A3935; color: var(--paper); }
+.icon-btn:hover   { --tint: var(--orange); }
+.burger           { --tint: #3A3935; }
+.chips a          { --tint: var(--lilac); color: var(--black); border-radius: 4px; }
+.chips a:hover    { --tint: var(--black); color: var(--paper); }
+/* sobre fondo negro, el botón negro lleva un borde fino para que se vea */
+.on-dark .btn:hover, .nav .nav-cta:active { box-shadow: inset 0 0 0 1px var(--orange) !important; }
+.chips a:hover    { box-shadow: inset 0 0 0 1px var(--lilac) !important; }
 
 /* =========================================================
    PERSONAJE QUE SE ASOMA desde la orilla de abajo
@@ -513,8 +494,7 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
   margin-bottom: 8px; padding: 8px 14px; border-radius: 999px;
   font-family: var(--mono); font-size: 12px; line-height: 20px; text-transform: uppercase; white-space: nowrap;
   color: var(--black);
-  background: linear-gradient(180deg, rgba(255,255,255,.3), rgba(255,255,255,.05) 55%, rgba(255,255,255,.12)), var(--lilac);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 8px 20px -8px rgba(0,0,0,.6);
+  background: var(--lilac);
   opacity: 0; transform: translateY(10px) scale(.8); transform-origin: 50% 100%;
   transition: opacity .25s, transform .35s cubic-bezier(.34, 1.56, .64, 1);
 }
@@ -522,7 +502,7 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .peek.is-up { pointer-events: auto; }
 .peek.is-up .peek-window img { transform: translateY(0) rotate(-4deg); animation: peek-wiggle 2.8s ease-in-out .6s infinite; }
 .peek.is-up .peek-bubble { opacity: 1; transform: none; transition-delay: .35s; }
-.peek:hover .peek-bubble { background: linear-gradient(180deg, rgba(255,255,255,.26), rgba(255,255,255,.05) 55%, rgba(255,255,255,.12)), var(--orange); color: var(--paper); }
+.peek:hover .peek-bubble { background: var(--orange); color: var(--paper); }
 .peek:focus-visible { outline: 2px solid rgba(242,242,242,.6); outline-offset: 4px; border-radius: 16px; }
 @keyframes peek-wiggle { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(4px) rotate(3deg); } }
 @media (prefers-reduced-motion: reduce) {
