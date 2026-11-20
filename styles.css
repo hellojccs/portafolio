@@ -670,3 +670,7 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 @media (max-width: 760px) {
   .cv { grid-template-columns: 1fr; gap: 48px; }
 }
+
+/* Título "Hello, web surfer!" (lettering de Juan Carlos) */
+.hello-title { margin: 0 0 clamp(40px, 5vw, 72px); }
+.hello-title img { width: min(100%, 820px); height: auto; }
