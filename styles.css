@@ -102,7 +102,7 @@ svg { width: 20px; height: 20px; flex: none; }
 .nav-links { height: 48px; }
 .nav-links .tab {
   position: relative; z-index: 2; display: flex; align-items: center; height: 100%; padding: 0 20px; border-radius: 999px;
-  font-family: var(--mono); font-size: 14px; line-height: 22px; text-transform: uppercase; color: #6E6C67; white-space: nowrap; transition: color .3s;
+  font-family: var(--mono); font-size: 12px; line-height: 20px; text-transform: uppercase; color: #6E6C67; white-space: nowrap; transition: color .3s;
 }
 .nav-links .tab:hover { color: #B9B7B1; }
 .nav-links .tab.is-active, .nav-links .tab.is-lit { color: var(--paper); }
@@ -238,7 +238,7 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 /* ---------- Sobre mí ---------- */
 .about { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(36px, 6vw, 96px); align-items: start; }
 .about h2 { max-width: 20ch; }
-.about-text { display: flex; flex-direction: column; gap: 16px; font-size: 14px; line-height: 22px; text-align: justify; hyphens: auto; }   /* lg 14/22 */
+.about-text { display: flex; flex-direction: column; gap: 16px; font-size: 12px; line-height: 20px; text-align: justify; hyphens: auto; }   /* base 12/20, igual que el hero */
 .about-text strong { font-weight: 700; }
 .about-text .btn { align-self: flex-start; margin-top: 12px; }
 .facts { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; padding-top: 20px; border-top: 1px solid var(--line-l); text-align: left; }
@@ -291,7 +291,7 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .shop { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; background: var(--orange); padding: clamp(28px, 5vw, 64px); }
 .shop .label { color: var(--black); margin-bottom: 20px; }
 .shop h2 { color: var(--black); }
-.shop-text { margin-top: 16px; max-width: 44ch; color: var(--black); font-size: 14px; line-height: 22px; }
+.shop-text { margin-top: 16px; max-width: 44ch; color: var(--black); font-size: 12px; line-height: 20px; }
 .shop img { width: clamp(140px, 20vw, 260px); height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
 
 /* ---------- Contacto ---------- */
@@ -531,7 +531,7 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .service-head .num { width: 100%; }
 .service-head h3 { font-size: 36px; line-height: 44px; }   /* H1 */
 .service-head .tag { align-self: center; }
-.service-body { display: flex; flex-direction: column; gap: 14px; font-size: 14px; line-height: 22px; }
+.service-body { display: flex; flex-direction: column; gap: 14px; font-size: 12px; line-height: 20px; }
 .deliverables { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
 .deliverables li {
   font-size: 12px; line-height: 20px; text-transform: uppercase; padding: 6px 14px; border-radius: 999px;
