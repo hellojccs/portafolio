@@ -83,9 +83,15 @@
 
     <!-- ============ PORTADA ============ -->
     <section id="inicio" class="hero on-dark">
-      <div class="avatar">
-        <img src="assets/img/personaje.jpg" alt="Personaje de Juan Carlos con gorra hello" width="800" height="800">
-      </div>
+      <!-- Tu personaje: cae y rebota al cargar, flota, te sigue con la mirada
+           (se inclina hacia el mouse) y salta al tocarlo. -->
+      <button class="toy" type="button" aria-label="Saludar" data-toy>
+        <span class="toy-glow" aria-hidden="true"></span>
+        <span class="toy-body" data-toy-body>
+          <img src="assets/img/personaje-cuerpo.webp" alt="Personaje de Juan Carlos con gorra hello" width="697" height="900">
+        </span>
+        <span class="toy-shadow" aria-hidden="true"></span>
+      </button>
       <h1>Brand &amp; Visual Designer</h1>
       <p class="hero-text">
         <strong>Brand and Visual Designer</strong> enfocado en crear sistemas visuales y
@@ -267,5 +273,6 @@
   </script>
   <script src="glass-menu.js"></script>
   <script src="spotlight.js"></script>
+  <script src="toy.js"></script>
 </body>
 </html>
