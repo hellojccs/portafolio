@@ -41,7 +41,29 @@
     </nav>
     <a href="#contacto" class="btn btn-sm nav-cta">Work with me <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     <a href="https://wa.me/525536771350" class="icon-btn nav-wa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><use href="#i-wa"/></svg></a>
+    <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="glass-menu" data-burger>
+      <span></span><span></span><span></span>
+    </button>
   </header>
+
+  <!-- ============ GLASS MENU (menú en celular y tableta) ============
+       El botón de tres líneas se convierte en una placa oscura con las
+       secciones. Para cambiar un nombre, edita el texto de cada <a>.
+  -->
+  <div class="gm" id="glass-menu" data-gm hidden>
+    <div class="gm-backdrop" data-gm-close></div>
+    <div class="gm-sheet" role="dialog" aria-modal="true" aria-label="Menú" data-gm-sheet>
+      <button class="gm-close" type="button" aria-label="Cerrar menú" data-gm-close><span class="gm-cap"></span></button>
+      <span class="gm-led" data-gm-led aria-hidden="true"></span>
+      <div class="gm-lens" data-gm-lens aria-hidden="true"><span data-gm-lens-num>01</span></div>
+      <nav class="gm-items">
+        <a class="gm-item" href="#sobre-mi"><span class="gm-label">Sobre mí</span><span class="gm-num">01</span></a>
+        <a class="gm-item" href="#proyectos"><span class="gm-label">Proyectos</span><span class="gm-num">02</span></a>
+        <a class="gm-item" href="#tienda"><span class="gm-label">Tienda</span><span class="gm-num">03</span></a>
+        <a class="gm-item" href="#contacto"><span class="gm-label">Escríbeme</span><span class="gm-num">04</span></a>
+      </nav>
+    </div>
+  </div>
 
   <!-- Botones flotantes -->
   <ul class="float" aria-label="Redes">
@@ -237,5 +259,6 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.about, .pillars li, .forms article, .card, .shop, .contact').forEach(el => { el.classList.add('reveal'); io.observe(el); });
   </script>
+  <script src="glass-menu.js"></script>
 </body>
 </html>
