@@ -52,6 +52,15 @@
     </button>
   </header>
 
+  <!-- ============ PERSONAJE QUE SE ASOMA ============
+       Al bajar por la página, cuando dejas de hacer scroll, tu personaje se
+       asoma desde la orilla de abajo. Al tocarlo te lleva a Contacto.
+  -->
+  <a class="peek" href="#contacto" data-peek aria-label="¿Hablamos? Ir a contacto">
+    <span class="peek-bubble">¿Hablamos?</span>
+    <span class="peek-window"><img src="assets/img/personaje-cuerpo.webp" alt="" width="697" height="900" loading="lazy"></span>
+  </a>
+
   <!-- ============ GLASS MENU (menú en celular y tableta) ============
        El botón de tres líneas se convierte en una placa oscura con las
        secciones. Para cambiar un nombre, edita el texto de cada <a>.
@@ -274,5 +283,6 @@
   <script src="glass-menu.js"></script>
   <script src="spotlight.js"></script>
   <script src="toy.js"></script>
+  <script src="peek.js"></script>
 </body>
 </html>

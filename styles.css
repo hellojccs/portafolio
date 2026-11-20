@@ -498,3 +498,39 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .chips a          { border-radius: 4px; }
 /* sobre fondo claro, un contorno suave para que el aro se lea */
 .light .btn::after { background: linear-gradient(180deg, rgba(255,255,255,.75), rgba(28,27,23,.25) 55%, rgba(28,27,23,.45)); }
+
+/* =========================================================
+   PERSONAJE QUE SE ASOMA desde la orilla de abajo
+   ========================================================= */
+.peek {
+  position: fixed; right: clamp(16px, 4vw, 48px); bottom: 0; z-index: 55;
+  width: clamp(96px, 9vw, 132px); display: flex; flex-direction: column; align-items: center;
+  pointer-events: none;
+}
+.peek-window { display: block; width: 100%; height: clamp(84px, 8vw, 116px); clip-path: inset(-60% -60% 0 -60%); }  /* solo recorta abajo */
+.peek-window img {
+  width: 100%; height: auto; display: block;
+  transform: translateY(110%) rotate(8deg); transform-origin: 50% 100%;
+  transition: transform .55s cubic-bezier(.34, 1.56, .64, 1);
+  filter: drop-shadow(0 -6px 18px rgba(0,0,0,.35));
+}
+.peek-bubble {
+  margin-bottom: 8px; padding: 8px 14px; border-radius: 999px;
+  font-family: var(--mono); font-size: 12px; line-height: 20px; text-transform: uppercase; white-space: nowrap;
+  color: var(--black);
+  background: linear-gradient(180deg, rgba(255,255,255,.3), rgba(255,255,255,.05) 55%, rgba(255,255,255,.12)), var(--lilac);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 8px 20px -8px rgba(0,0,0,.6);
+  opacity: 0; transform: translateY(10px) scale(.8); transform-origin: 50% 100%;
+  transition: opacity .25s, transform .35s cubic-bezier(.34, 1.56, .64, 1);
+}
+/* asomado */
+.peek.is-up { pointer-events: auto; }
+.peek.is-up .peek-window img { transform: translateY(0) rotate(-4deg); animation: peek-wiggle 2.8s ease-in-out .6s infinite; }
+.peek.is-up .peek-bubble { opacity: 1; transform: none; transition-delay: .35s; }
+.peek:hover .peek-bubble { background: linear-gradient(180deg, rgba(255,255,255,.26), rgba(255,255,255,.05) 55%, rgba(255,255,255,.12)), var(--orange); color: var(--paper); }
+.peek:focus-visible { outline: 2px solid rgba(242,242,242,.6); outline-offset: 4px; border-radius: 16px; }
+@keyframes peek-wiggle { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(4px) rotate(3deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .peek-window img { transition: none; }
+  .peek.is-up .peek-window img { animation: none; }
+}
