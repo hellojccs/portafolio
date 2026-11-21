@@ -27,6 +27,11 @@
       </dl>
     </header>
 
+    <div class="pj-intro">
+      <p>Holy es el arte de estar en movimiento. Este Club de Movimiento nace con la intención de crear un espacio donde personas con la misma sensación podamos encontrarnos para correr, hacer hiking, andar en bici o simplemente caminar al aire libre, sin la necesidad de competir, medir tiempos o contar kilómetros.</p>
+      <p>Un espacio donde lo importante no sea demostrar algo, sino sentirnos bien mientras seguimos en movimiento.</p>
+    </div>
+
     <div class="pj-cover slider" data-slider data-controls aria-roledescription="carrusel" aria-label="Imágenes del proyecto Holy">
       <div class="slider-track">
           <img src="assets/img/holy/holy-01.webp" alt="" loading="lazy">
@@ -59,6 +64,32 @@
         <figure class="pj-item"><img src="assets/img/holy/holy-10.webp" alt="Gorra Holy y paleta de color" loading="lazy"></figure>
     </section>
 
+    <section class="deck" data-deck data-count="30" data-src="assets/img/holy/guidelines/g-{n}.webp" data-thumb="assets/img/holy/guidelines/t-{n}.webp" aria-label="Brand Guidelines de Holy">
+      <div class="deck-head">
+        <p class="label">// Brand Guidelines</p>
+        <h2>Manual de marca</h2>
+        <p class="deck-sub">30 páginas · 5 capítulos</p>
+      </div>
+      <nav class="deck-chapters" aria-label="Capítulos">
+        <button type="button" data-go="1">Intro</button>
+        <button type="button" data-go="4">01 Logo</button>
+        <button type="button" data-go="13">02 Slogan</button>
+        <button type="button" data-go="16">03 Color</button>
+        <button type="button" data-go="19">04 Tipografía</button>
+        <button type="button" data-go="24">05 Brand in action</button>
+      </nav>
+      <div class="deck-stage" tabindex="0">
+        <img class="deck-img" src="assets/img/holy/guidelines/g-01.webp" alt="Brand Guidelines de Holy, página 1 de 30" width="1600" height="900">
+        <button type="button" class="deck-nav deck-prev" aria-label="Página anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12H7M11.5 7.5 7 12l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button type="button" class="deck-nav deck-next" aria-label="Página siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 12h10M12.5 7.5 17 12l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="deck-bar">
+          <span class="deck-count" aria-live="polite">01 / 30</span>
+          <button type="button" class="deck-full" aria-label="Ver en pantalla completa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+      <div class="deck-thumbs" role="tablist" aria-label="Páginas"></div>
+    </section>
+
     <div class="pj-cta">
       <a href="index.html#contacto" class="btn">Work with me <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
@@ -68,5 +99,6 @@
     <symbol id="i-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10.5"/><path d="M7 12h10M12.5 7.5 17 12l-4.5 4.5"/></g></symbol>
   </svg>
   <script src="slider.js" defer></script>
+  <script src="deck.js" defer></script>
 </body>
 </html>
