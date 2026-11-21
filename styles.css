@@ -948,3 +948,27 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
   .deck-thumb { width: 96px; }
   .pj-intro { margin-left: 0; }
 }
+
+/* ===== Video de portada de proyecto ===== */
+.pj-video { position: relative; margin-top: clamp(32px, 4vw, 56px); border-radius: 24px; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
+.pj-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pj-sound { position: absolute; right: 16px; bottom: 16px; height: 32px; padding: 0 14px; border-radius: 999px; border: 0; background: rgba(20,20,20,.55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: var(--paper); font: 10px/32px var(--mono); text-transform: uppercase; cursor: pointer; transition: background .2s; }
+.pj-sound:hover { background: var(--orange); }
+.pj-sound[aria-pressed="true"] { background: var(--lilac); color: var(--black); }
+.card .media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ===== Capítulos de construcción de marca (Dirty Dandy) ===== */
+.dd-chapter { margin-top: clamp(72px, 9vw, 136px); }
+.dd-step { display: flex; align-items: baseline; gap: 20px; padding-bottom: 20px; margin-bottom: clamp(20px, 2.5vw, 32px); border-bottom: 1px solid rgba(204,191,252,.55); }
+.dd-step span { font-size: 10px; line-height: 20px; color: var(--orange); }
+.dd-step h2 { font-family: var(--sans); font-weight: 400; font-size: 36px; line-height: 44px; color: var(--paper); margin: 0; }
+.dd-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 2vw, 24px); }
+.dd-grid + .dd-grid { margin-top: clamp(12px, 2vw, 24px); }
+.dd-three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.dd-item { margin: 0; border-radius: 20px; overflow: hidden; background: var(--line); }
+.dd-full { grid-column: 1 / -1; }
+.dd-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.dd-three .dd-item img { aspect-ratio: 2 / 3; }
+.dd-item:hover img { transform: scale(1.02); }
+@media (max-width: 760px) { .dd-three { grid-template-columns: 1fr; } .dd-step h2 { font-size: 28px; line-height: 36px; } }
+@media (max-width: 560px) { .pj-video { border-radius: 14px; } .dd-item { border-radius: 14px; } }
