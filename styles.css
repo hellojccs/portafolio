@@ -955,7 +955,7 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .pj-sound { position: absolute; right: 16px; bottom: 16px; height: 32px; padding: 0 14px; border-radius: 999px; border: 0; background: rgba(20,20,20,.55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: var(--paper); font: 10px/32px var(--mono); text-transform: uppercase; cursor: pointer; transition: background .2s; }
 .pj-sound:hover { background: var(--orange); }
 .pj-sound[aria-pressed="true"] { background: var(--lilac); color: var(--black); }
-.card .media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card .media video, .card .media > img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 
 /* ===== Capítulos de construcción de marca (Dirty Dandy) ===== */
 .dd-chapter { margin-top: clamp(72px, 9vw, 136px); }
