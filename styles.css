@@ -890,12 +890,12 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 
 /* ===== Carrusel (portada de proyectos) ===== */
 .slider { position: relative; overflow: hidden; }
-.slider-track { display: flex; gap: 12px; height: 100%; transition: transform .9s cubic-bezier(.65,0,.35,1); will-change: transform; }
+.slider-track { display: flex; gap: 0; height: 100%; transition: transform .9s cubic-bezier(.65,0,.35,1); will-change: transform; }
 .slider-track img { flex: none; height: 100%; width: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
 .card .media .slider { background: var(--black); }
 .card:hover .media > .slider { transform: none; }
-.pj-cover.slider { height: clamp(380px, 46vw, 620px); border-radius: 0; }
-.pj-cover .slider-track img { border-radius: 20px; }
+.pj-cover.slider { height: clamp(380px, 46vw, 620px); border-radius: 24px; }
+.pj-cover .slider-track img { border-radius: 0; }
 .slider-ctrl { display: flex; align-items: center; justify-content: flex-end; gap: 16px; margin-top: 16px; }
 .slider-count { font-size: 10px; line-height: 20px; text-transform: uppercase; color: var(--grey); min-width: 64px; text-align: center; }
 .slider-btn { width: 44px; height: 44px; border-radius: 999px; border: 1px solid rgba(242,242,242,.35); background: transparent; color: var(--paper); display: grid; place-items: center; cursor: pointer; transition: border-color .2s, background .2s, color .2s; }
