@@ -216,7 +216,7 @@ svg { width: 20px; height: 20px; flex: none; }
 }
 @keyframes bob { 50% { transform: translateY(-10px); } }
 .hero h1 { color: var(--orange); font-size: clamp(36px, 4.8vw, 72px); line-height: 1.05; }  /* título grande de portada */
-.hero-text { max-width: 60ch; margin-top: 28px; color: #D9D8D4; }
+.hero-text { max-width: 68ch; margin-top: 28px; color: #D9D8D4; text-align: justify; text-align-last: center; hyphens: none; }
 .hero-text strong { color: var(--paper); font-weight: 700; }
 .hero .btn { margin-top: 28px; }
 .chips { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 28px; }
@@ -266,7 +266,7 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .media > * { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
 .card:hover .media > * { transform: scale(1.035); }
 .meta { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 16px; padding-top: 12px; }
-.meta h3 { font-size: 20px; line-height: 28px; }   /* H2 */
+.meta h3 { font-size: 16px; line-height: 24px; }
 .meta p { color: var(--grey-l); font-size: 10px; line-height: 20px; text-transform: uppercase; }
 .meta .arrow { margin-left: auto; color: var(--black); transition: color .2s, transform .25s; }
 .card { cursor: pointer; }
@@ -955,7 +955,7 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .pj-sound { position: absolute; right: 16px; bottom: 16px; height: 32px; padding: 0 14px; border-radius: 999px; border: 0; background: rgba(20,20,20,.55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: var(--paper); font: 10px/32px var(--mono); text-transform: uppercase; cursor: pointer; transition: background .2s; }
 .pj-sound:hover { background: var(--orange); }
 .pj-sound[aria-pressed="true"] { background: var(--lilac); color: var(--black); }
-.card .media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card .media video, .card .media > img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 
 /* ===== Capítulos de construcción de marca (Dirty Dandy) ===== */
 .dd-chapter { margin-top: clamp(72px, 9vw, 136px); }
@@ -972,3 +972,8 @@ h2 { font-size: 36px; line-height: 44px; }   /* H1 del sistema */
 .dd-item:hover img { transform: scale(1.02); }
 @media (max-width: 760px) { .dd-three { grid-template-columns: 1fr; } .dd-step h2 { font-size: 28px; line-height: 36px; } }
 @media (max-width: 560px) { .pj-video { border-radius: 14px; } .dd-item { border-radius: 14px; } }
+
+/* Texto solo para buscadores y lectores de pantalla */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.am-intro p strong { font-weight: 700; }
+.pj-cover > img { display: block; width: 100%; height: auto; }

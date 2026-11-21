@@ -34,7 +34,7 @@
       var next = new Image();
       next.onload = next.onerror = function () {
         img.src = src(page);
-        img.alt = 'Brand Guidelines de Holy, página ' + page + ' de ' + total;
+        img.alt = (deck.getAttribute('aria-label') || 'Brand Guidelines') + ', página ' + page + ' de ' + total;
         requestAnimationFrame(function () { img.classList.remove('is-swap'); });
       };
       next.src = src(page);
