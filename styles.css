@@ -216,7 +216,7 @@ svg { width: 20px; height: 20px; flex: none; }
 }
 @keyframes bob { 50% { transform: translateY(-10px); } }
 .hero h1 { color: var(--orange); font-size: clamp(36px, 4.8vw, 72px); line-height: 1.05; }  /* título grande de portada */
-.hero-text { max-width: 60ch; margin-top: 28px; color: #D9D8D4; }
+.hero-text { max-width: 68ch; margin-top: 28px; color: #D9D8D4; text-align: justify; text-align-last: center; hyphens: none; }
 .hero-text strong { color: var(--paper); font-weight: 700; }
 .hero .btn { margin-top: 28px; }
 .chips { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 28px; }
